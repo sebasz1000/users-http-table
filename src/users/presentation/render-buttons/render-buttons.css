@@ -1,0 +1,17 @@
+nav{
+    margin: 2em 0;
+}
+
+span#current-page{
+    margin: 0 3em;
+    font-weight: bold;
+}
+
+button{
+    background-color: rgb(65, 65, 224);
+}
+
+button:hover{
+    background-color: rgb(236, 236, 63);
+    color: black;
+}
