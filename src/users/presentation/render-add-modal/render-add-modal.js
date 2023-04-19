@@ -12,6 +12,7 @@ export const showModal = () => {
 export const hideModal = () => {
   // TODO Reset del formulario
   backdrop?.classList.add('hide-modal')
+  form && form.reset()
 }
 /**
  *
@@ -31,9 +32,22 @@ export const renderAddModal = (element) => {
   form.addEventListener('submit', (e) => {
     e.preventDefault()
     const formData = new FormData(form)
-    for (const iterator of formData) {
-      console.log(iterator)
+    const user = {}
+
+    for (const [key, value] of formData) {
+      if (key === 'balance') {
+        user[key] = +value
+        continue
+      }
+      if (key === 'isActive') {
+        user[key] = (value === 'on')//eslint-disable-line
+        continue
+      }
+      user[key] = value
     }
+    console.log(user)
+    // Todo Save user
+    hideModal()
   })
 
   backdrop.addEventListener('click', (e) => {
