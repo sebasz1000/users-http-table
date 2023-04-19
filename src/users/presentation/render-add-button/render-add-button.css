@@ -1,0 +1,10 @@
+.add-btn{
+    border-radius: 50%;
+    width: 4em;
+    height: 4em;
+    font-weight: bold;
+    font-size: larger;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+}
